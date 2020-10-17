@@ -35,8 +35,20 @@ let playRound = (playerSelection, computerSelection) => {
 
 }
 
+const game = () => {
+    const playerSelection = prompt("Choose Rock, Paper or Scissors")
 
-const playerSelection = "Rock"
-const computerSelection = computerPlay()
+    const computerSelection = computerPlay()
+    const char = playerSelection.substring(0, 1).toUpperCase()
+    console.log(playRound(myMap.get(char), computerSelection))
+}
 
-console.log(playRound(playerSelection, computerSelection))
+let level = 1
+
+while (level <= 5) {
+    game()
+    level++
+}
+
+console.log("GAME OVER")
+
